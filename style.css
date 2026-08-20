@@ -376,10 +376,21 @@ footer { margin: 4rem 0 2rem; color: #666; font-size: 0.9rem; }
    ================================ */
 
 .project-content img,
-.project-content video {
+.project-content video,
+.project-content iframe {
   width: 100%;
   height: 575px;
+  display: block;
+  border: none;
+}
+
+.project-content img,
+.project-content video {
   object-fit: cover;
+}
+
+.project-content iframe {
+  object-fit: contain;
 }
 /* MEDIUM PINK SECONDARY TEXT */
 
