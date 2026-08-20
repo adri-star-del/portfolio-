@@ -375,22 +375,26 @@ footer { margin: 4rem 0 2rem; color: #666; font-size: 0.9rem; }
    MATCH ALL PROJECT MEDIA SIZES
    ================================ */
 
+/* ==========================================
+   PROJECT MEDIA
+   ========================================== */
+
 .project-content img,
-.project-content video,
+.project-content video {
+  width: 100%;
+  height: 575px;
+  object-fit: cover;
+  display: block;
+  border: none;
+}
+
+/* YOUTUBE VIDEOS */
+
 .project-content iframe {
   width: 100%;
   height: 575px;
   display: block;
   border: none;
-}
-
-.project-content img,
-.project-content video {
-  object-fit: cover;
-}
-
-.project-content iframe {
-  object-fit: contain;
 }
 /* MEDIUM PINK SECONDARY TEXT */
 
