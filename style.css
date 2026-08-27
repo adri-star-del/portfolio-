@@ -727,115 +727,56 @@ body {
 
 }
 /* ==========================================
-   SOFT ORBITING PINK LIGHT
+   SOFT MOVING PINK ORB BACKGROUND
    ========================================== */
 
 body {
-  position: relative;
-  background: #fff0f7;
-  overflow-x: hidden;
-}
-
-
-/* THE GLOW */
-
-body::after {
-  content: "";
-
-  position: fixed;
-
-  width: 500px;
-  height: 500px;
-
-  top: 50%;
-  left: 50%;
-
-  border-radius: 50%;
-
   background:
     radial-gradient(
-      circle,
-      rgba(255, 170, 210, 0.45) 0%,
-      rgba(255, 195, 225, 0.30) 30%,
-      rgba(255, 220, 238, 0.15) 52%,
+      circle 420px at 50% 45%,
+      rgba(255, 180, 215, 0.55),
+      rgba(255, 210, 230, 0.28) 45%,
       transparent 72%
-    );
+    ),
+    #fff0f7;
 
-  filter: blur(12px);
+  background-repeat: no-repeat;
 
-  pointer-events: none;
+  background-attachment: fixed;
 
-  z-index: 0;
-
-  transform: translate(-50%, -50%);
-
-  animation: pinkOrb 8s ease-in-out infinite;
+  animation: pinkOrbMove 10s ease-in-out infinite;
 }
 
 
-/* SLOW PULSING + GENTLE FLOAT */
+/* ==========================================
+   GENTLE ORBIT / PULSE
+   ========================================== */
 
-@keyframes pinkOrb {
+@keyframes pinkOrbMove {
 
   0% {
-    transform:
-      translate(-50%, -50%)
-      scale(0.85);
-
-    opacity: 0.65;
+    background-position:
+      45% 42%;
   }
 
   25% {
-    transform:
-      translate(-46%, -52%)
-      scale(0.98);
-
-    opacity: 0.85;
+    background-position:
+      55% 45%;
   }
 
   50% {
-    transform:
-      translate(-50%, -47%)
-      scale(1.12);
-
-    opacity: 1;
+    background-position:
+      52% 55%;
   }
 
   75% {
-    transform:
-      translate(-54%, -50%)
-      scale(0.98);
-
-    opacity: 0.85;
+    background-position:
+      43% 50%;
   }
 
   100% {
-    transform:
-      translate(-50%, -50%)
-      scale(0.85);
-
-    opacity: 0.65;
+    background-position:
+      45% 42%;
   }
 
-}
-
-
-/* KEEP YOUR CONTENT ABOVE THE GLOW */
-
-header,
-main,
-footer {
-  position: relative;
-  z-index: 1;
-}
-
-
-/* KEEP YOUR DECORATIONS ABOVE THE GLOW */
-
-.sparkle {
-  z-index: 3;
-}
-
-.film-strip {
-  z-index: 3;
 }
