@@ -726,3 +726,70 @@ body {
   }
 
 }
+/* ==========================================
+   SOFT ORBITING PINK LIGHT
+   ========================================== */
+
+body {
+  position: relative;
+  background: #fff0f7;
+  overflow-x: hidden;
+}
+
+
+/* Soft glowing light */
+
+body::after {
+  content: "";
+
+  position: fixed;
+
+  width: 500px;
+  height: 500px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 182, 215, 0.42) 0%,
+      rgba(255, 205, 228, 0.25) 35%,
+      rgba(255, 225, 240, 0.10) 58%,
+      transparent 72%
+    );
+
+  filter: blur(8px);
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  animation: pinkLightPulse 8s ease-in-out infinite;
+}
+
+
+/* Slow breathing / pulsing */
+
+@keyframes pinkLightPulse {
+
+  0%,
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(0.88);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform:
+      translate(-50%, -50%)
+      scale(1.12);
+    opacity: 1;
+  }
+
+}
