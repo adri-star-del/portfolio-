@@ -4,10 +4,31 @@ body {
   font-family: Garamond, Georgia, "Times New Roman", serif;
   line-height: 1.5;
   color: #1a1a1a;
-  background: #fff0f7;
+
   max-width: 42rem;
   margin: 0 auto;
   padding: 1.5rem;
+
+  background: transparent;
+}
+
+
+/* FULL PAGE BACKGROUND */
+
+html {
+  min-height: 100%;
+  background:
+    radial-gradient(
+      ellipse at center,
+      #fffefe 0%,
+      #fff9fc 25%,
+      #ffeaf4 55%,
+      #ffd7e8 100%
+    );
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header { margin: 2rem 0 3rem; }
@@ -655,22 +676,4 @@ header h1 {
 .project-content p,
 .project > p {
   color: #ff1493 !important;
-}
-/* ==========================================
-   SOFT PINK-TO-WHITE VIGNETTE
-   ========================================== */
-
-body {
-  background:
-    radial-gradient(
-      ellipse at center,
-      #fffefe 0%,
-      #fff9fc 30%,
-      #ffeaf4 62%,
-      #ffd7e8 100%
-    );
-
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
