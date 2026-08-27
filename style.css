@@ -657,121 +657,46 @@ header h1 {
   color: #ff1493 !important;
 }
 /* ==========================================
-/* ==========================================
-   SOFT ORBITING PINK LIGHT
+   SOFT EXPANDING PINK GLOW
    ========================================== */
 
 body {
-  position: relative;
-  isolation: isolate;
-  background: #fff0f7;
-  overflow-x: hidden;
-}
-
-
-/* THE GLOWING ORB */
-
-body::after {
-  content: "";
-
-  position: fixed;
-
-  width: 520px;
-  height: 520px;
-
-  left: 50%;
-  top: 50%;
-
-  border-radius: 50%;
-
   background:
     radial-gradient(
-      circle,
-      rgba(255, 170, 210, 0.50) 0%,
-      rgba(255, 190, 220, 0.35) 25%,
-      rgba(255, 215, 235, 0.18) 48%,
-      rgba(255, 235, 245, 0.05) 65%,
+      circle at 50% 45%,
+      rgba(255, 145, 195, 0.38) 0%,
+      rgba(255, 175, 215, 0.28) 18%,
+      rgba(255, 205, 230, 0.18) 38%,
+      rgba(255, 225, 240, 0.08) 58%,
       transparent 75%
-    );
+    ),
+    #fff0f7;
 
-  filter: blur(10px);
-
-  pointer-events: none;
-
-  z-index: 0;
-
-  transform: translate(-50%, -50%);
-
-  animation: orbitingPinkLight 12s ease-in-out infinite;
+  background-attachment: fixed;
+  animation: softPinkPulse 12s ease-in-out infinite;
 }
 
 
-/* ==========================================
-   SLOW ORBIT + PULSE
-   ========================================== */
+/* Slowly expands outward */
 
-@keyframes orbitingPinkLight {
+@keyframes softPinkPulse {
 
   0% {
-    transform:
-      translate(-50%, -50%)
-      translate(0px, -70px)
-      scale(0.88);
-
-    opacity: 0.65;
-  }
-
-  25% {
-    transform:
-      translate(-50%, -50%)
-      translate(70px, 0px)
-      scale(1);
-
-    opacity: 0.85;
+    background-size:
+      85% 85%,
+      auto;
   }
 
   50% {
-    transform:
-      translate(-50%, -50%)
-      translate(0px, 70px)
-      scale(1.12);
-
-    opacity: 1;
-  }
-
-  75% {
-    transform:
-      translate(-50%, -50%)
-      translate(-70px, 0px)
-      scale(1);
-
-    opacity: 0.85;
+    background-size:
+      125% 125%,
+      auto;
   }
 
   100% {
-    transform:
-      translate(-50%, -50%)
-      translate(0px, -70px)
-      scale(0.88);
-
-    opacity: 0.65;
+    background-size:
+      85% 85%,
+      auto;
   }
 
-}
-
-
-/* KEEP EVERYTHING ABOVE THE LIGHT */
-
-header,
-main,
-footer {
-  position: relative;
-  z-index: 2;
-}
-
-.sparkles,
-.sparkle,
-.film-strip {
-  position: fixed;
-  z-index: 3;
 }
