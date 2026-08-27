@@ -657,46 +657,20 @@ header h1 {
   color: #ff1493 !important;
 }
 /* ==========================================
-   SOFT EXPANDING PINK GLOW
+   SOFT PINK-TO-WHITE VIGNETTE
    ========================================== */
 
 body {
   background:
     radial-gradient(
-      circle at 50% 45%,
-      rgba(255, 145, 195, 0.38) 0%,
-      rgba(255, 175, 215, 0.28) 18%,
-      rgba(255, 205, 230, 0.18) 38%,
-      rgba(255, 225, 240, 0.08) 58%,
-      transparent 75%
-    ),
-    #fff0f7;
+      ellipse at center,
+      #fffefe 0%,
+      #fff9fc 30%,
+      #ffeaf4 62%,
+      #ffd7e8 100%
+    );
 
   background-attachment: fixed;
-  animation: softPinkPulse 12s ease-in-out infinite;
-}
-
-
-/* Slowly expands outward */
-
-@keyframes softPinkPulse {
-
-  0% {
-    background-size:
-      85% 85%,
-      auto;
-  }
-
-  50% {
-    background-size:
-      125% 125%,
-      auto;
-  }
-
-  100% {
-    background-size:
-      85% 85%,
-      auto;
-  }
-
+  background-repeat: no-repeat;
+  background-size: cover;
 }
