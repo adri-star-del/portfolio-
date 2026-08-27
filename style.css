@@ -657,126 +657,121 @@ header h1 {
   color: #ff1493 !important;
 }
 /* ==========================================
-   PINK CINEMA BACKGROUND
+/* ==========================================
+   SOFT ORBITING PINK LIGHT
    ========================================== */
 
 body {
+  position: relative;
+  isolation: isolate;
+  background: #fff0f7;
+  overflow-x: hidden;
+}
+
+
+/* THE GLOWING ORB */
+
+body::after {
+  content: "";
+
+  position: fixed;
+
+  width: 520px;
+  height: 520px;
+
+  left: 50%;
+  top: 50%;
+
+  border-radius: 50%;
+
   background:
     radial-gradient(
-      ellipse at 50% 15%,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(255, 210, 230, 0.7) 25%,
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse at 5% 50%,
-      rgba(255, 105, 180, 0.18) 0%,
-      transparent 35%
-    ),
-    radial-gradient(
-      ellipse at 95% 65%,
-      rgba(255, 105, 180, 0.18) 0%,
-      transparent 35%
-    ),
-    linear-gradient(
-      135deg,
-      #ffe4f1,
-      #fff0f7,
-      #ffdbea
+      circle,
+      rgba(255, 170, 210, 0.50) 0%,
+      rgba(255, 190, 220, 0.35) 25%,
+      rgba(255, 215, 235, 0.18) 48%,
+      rgba(255, 235, 245, 0.05) 65%,
+      transparent 75%
     );
 
-  background-size:
-    100% 100%,
-    70% 100%,
-    70% 100%,
-    200% 200%;
+  filter: blur(10px);
 
-  animation: cinemaGlow 10s ease-in-out infinite alternate;
+  pointer-events: none;
+
+  z-index: 0;
+
+  transform: translate(-50%, -50%);
+
+  animation: orbitingPinkLight 12s ease-in-out infinite;
 }
 
 
 /* ==========================================
-   SLOW THEATER-LIGHT MOVEMENT
+   SLOW ORBIT + PULSE
    ========================================== */
 
-@keyframes cinemaGlow {
+@keyframes orbitingPinkLight {
 
   0% {
-    background-position:
-      50% 15%,
-      0% 50%,
-      100% 50%,
-      0% 50%;
-  }
+    transform:
+      translate(-50%, -50%)
+      translate(0px, -70px)
+      scale(0.88);
 
-  50% {
-    background-position:
-      50% 20%,
-      10% 45%,
-      90% 55%,
-      50% 50%;
-  }
-
-  100% {
-    background-position:
-      50% 15%,
-      0% 55%,
-      100% 45%,
-      100% 50%;
-  }
-
-}
-/* ==========================================
-   SOFT MOVING PINK ORB BACKGROUND
-   ========================================== */
-
-body {
-  background:
-    radial-gradient(
-      circle 420px at 50% 45%,
-      rgba(255, 180, 215, 0.55),
-      rgba(255, 210, 230, 0.28) 45%,
-      transparent 72%
-    ),
-    #fff0f7;
-
-  background-repeat: no-repeat;
-
-  background-attachment: fixed;
-
-  animation: pinkOrbMove 10s ease-in-out infinite;
-}
-
-
-/* ==========================================
-   GENTLE ORBIT / PULSE
-   ========================================== */
-
-@keyframes pinkOrbMove {
-
-  0% {
-    background-position:
-      45% 42%;
+    opacity: 0.65;
   }
 
   25% {
-    background-position:
-      55% 45%;
+    transform:
+      translate(-50%, -50%)
+      translate(70px, 0px)
+      scale(1);
+
+    opacity: 0.85;
   }
 
   50% {
-    background-position:
-      52% 55%;
+    transform:
+      translate(-50%, -50%)
+      translate(0px, 70px)
+      scale(1.12);
+
+    opacity: 1;
   }
 
   75% {
-    background-position:
-      43% 50%;
+    transform:
+      translate(-50%, -50%)
+      translate(-70px, 0px)
+      scale(1);
+
+    opacity: 0.85;
   }
 
   100% {
-    background-position:
-      45% 42%;
+    transform:
+      translate(-50%, -50%)
+      translate(0px, -70px)
+      scale(0.88);
+
+    opacity: 0.65;
   }
 
+}
+
+
+/* KEEP EVERYTHING ABOVE THE LIGHT */
+
+header,
+main,
+footer {
+  position: relative;
+  z-index: 2;
+}
+
+.sparkles,
+.sparkle,
+.film-strip {
+  position: fixed;
+  z-index: 3;
 }
