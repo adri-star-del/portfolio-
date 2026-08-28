@@ -678,97 +678,80 @@ header h1 {
   color: #ff1493 !important;
 }
 /* ==========================================
-/* ==========================================
-   MOBILE — FILM STRIPS + SPARKLES
+   MOBILE — DESKTOP-STYLE SIDE DECOR
    ========================================== */
 
 @media (max-width: 700px) {
 
-  /* ------------------------------------------
-     FILM STRIPS
-     ------------------------------------------ */
+  /* FILM STRIPS — MOVE INWARD */
 
   .film-strip {
-    position: fixed;
-
-    top: 0;
-    bottom: 0;
-
-    width: 42px;
-
-    z-index: 0;
+    width: 38px;
+    z-index: 1;
   }
 
   .film-strip-left {
-    left: 0;
+    left: 38px;
     right: auto;
   }
 
   .film-strip-right {
-    right: 0;
+    right: 38px;
     left: auto;
   }
 
   .film-strip-track {
-    width: 42px;
+    width: 38px;
   }
 
   .film-frame {
-    width: 38px;
+    width: 34px;
     height: 72px;
   }
 
 
-  /* ------------------------------------------
-     SPARKLES
-     Keep them OUTSIDE the project area
-     ------------------------------------------ */
+  /* SPARKLES — STAY OUTSIDE THE FILM STRIPS */
 
   .s1,
   .s3,
   .s5 {
-    left: 2px;
+    left: 3px;
   }
 
   .s2,
   .s4,
   .s6 {
-    left: 5px;
+    left: 12px;
   }
 
   .s7,
   .s9,
   .s11 {
-    right: 2px;
+    right: 3px;
   }
 
   .s8,
   .s10,
   .s12 {
-    right: 5px;
+    right: 12px;
   }
 
 
-  /* ------------------------------------------
-     PROJECTS
-     Give them their own space
-     ------------------------------------------ */
+  /* PROJECTS SIT BETWEEN THE FILM STRIPS */
 
   .project {
     position: relative;
-    z-index: 2;
+    z-index: 5;
 
-    margin-left: 45px;
-    margin-right: 45px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
 
-  /* ------------------------------------------
-     PROJECT MEDIA
-     ------------------------------------------ */
+  /* DECORATIONS STAY BEHIND PROJECT CONTENT */
 
-  .curtain-stage {
-    width: 100%;
+  .sparkle {
+    z-index: 2;
   }
 
 }
