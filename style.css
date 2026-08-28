@@ -422,38 +422,8 @@ figcaption {
 }
 
 /* Hide the finite old frame stack */
-/* INNER SQUARES ON FILM REEL */
-
-.film-frame::after {
-  content: "";
-
-  position: absolute;
-
-  top: 15px;
-  bottom: 15px;
-  left: 8px;
-  right: 8px;
-
-  border: 2px solid rgba(170, 55, 105, 0.6);
-
-  background: rgba(255, 255, 255, 0.18);
-
-  box-shadow:
-    inset 0 0 8px rgba(130, 30, 75, 0.15),
-    inset 0 3px 5px rgba(255, 255, 255, 0.4);
-
-  pointer-events: none;
-}
-
-
-@keyframes continuousFilm {
-  from {
-    transform: translateY(-112px);
-  }
-
-  to {
-    transform: translateY(0);
-  }
+.film-frame {
+  display: none;
 }
 
 @keyframes continuousFilm {
