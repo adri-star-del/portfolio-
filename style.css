@@ -3,14 +3,12 @@
    MAT 189
    ========================================== */
 
-
 /* ==========================================
    PAGE
    ========================================== */
 
 html {
   min-height: 100%;
-
   background:
     radial-gradient(
       ellipse at center,
@@ -19,23 +17,29 @@ html {
       #ffeaf4 55%,
       #ffd7e8 100%
     );
-
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 body {
-   position: relative; 
+  position: relative;
   font-family: Garamond, Georgia, "Times New Roman", serif;
   line-height: 1.5;
   color: #1a1a1a;
-
   max-width: 42rem;
   margin: 0 auto;
   padding: 1.5rem;
-
   background: transparent;
+}
+
+/* Keep normal page content above decorative film strips */
+header,
+main,
+.project,
+footer {
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -49,16 +53,12 @@ header {
 
 header h1 {
   margin: 0;
-
   font-family: "Lobster", cursive;
   font-size: 3.8rem;
   font-weight: 400;
-
   color: #ff1493;
-
   -webkit-text-stroke: 0.5px white;
   -webkit-text-fill-color: #ff1493;
-
   text-shadow:
     0 2px 0 white,
     2px 3px 0 #e60073,
@@ -82,13 +82,11 @@ header p {
 
 .project h2 {
   margin: 0 0 0.25rem;
-
   font-family: "Lobster", cursive;
   font-size: 2.1rem;
   font-weight: 400;
-
   color: #f51b8f;
-
+  -webkit-text-stroke: 0;
   text-shadow:
     0 1px 0 rgba(255, 255, 255, 0.75),
     0 2px 4px rgba(190, 0, 100, 0.18);
@@ -112,35 +110,36 @@ header p {
 
 
 /* ==========================================
-   MEDIA
+   PROJECT MEDIA
    ========================================== */
 
 figure {
   margin: 0;
 }
 
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
 .curtain-stage {
   position: relative;
-
   width: 100%;
   height: 575px;
-
   overflow: hidden;
 }
 
 .project-content {
   position: relative;
-
   width: 100%;
   height: 575px;
-
   z-index: 1;
 }
 
 .project-content figure {
   width: 100%;
   height: 575px;
-
   margin: 0;
 }
 
@@ -149,11 +148,9 @@ figure {
 .project-content iframe {
   width: 100%;
   height: 575px;
-
+  object-fit: cover;
   display: block;
   border: none;
-
-  object-fit: cover;
 }
 
 figcaption {
@@ -170,32 +167,23 @@ figcaption {
 .curtain-button {
   position: absolute;
   inset: 0;
-
   width: 100%;
   height: 100%;
-
-  padding: 0;
   border: none;
-
+  padding: 0;
   background: transparent;
-
   cursor: pointer;
   z-index: 10;
 }
 
-
 /* LEFT CURTAIN */
-
 .curtain-button::before {
   content: "";
-
   position: absolute;
   top: 0;
   left: 0;
-
   width: 50%;
   height: 100%;
-
   background:
     linear-gradient(
       90deg,
@@ -209,28 +197,20 @@ figcaption {
       #c40062 90%,
       #a80055 100%
     );
-
   box-shadow:
     inset 8px 0 15px rgba(100, 0, 50, 0.25),
     inset -8px 0 15px rgba(100, 0, 50, 0.25);
-
-  transition:
-    transform 1.6s cubic-bezier(0.55, 0, 0.15, 1);
+  transition: transform 1.6s cubic-bezier(0.55, 0, 0.15, 1);
 }
 
-
 /* RIGHT CURTAIN */
-
 .curtain-button::after {
   content: "";
-
   position: absolute;
   top: 0;
   right: 0;
-
   width: 50%;
   height: 100%;
-
   background:
     linear-gradient(
       90deg,
@@ -244,57 +224,35 @@ figcaption {
       #d9006c 90%,
       #a80055 100%
     );
-
   box-shadow:
     inset 8px 0 15px rgba(100, 0, 50, 0.25),
     inset -8px 0 15px rgba(100, 0, 50, 0.25);
-
-  transition:
-    transform 1.6s cubic-bezier(0.55, 0, 0.15, 1);
+  transition: transform 1.6s cubic-bezier(0.55, 0, 0.15, 1);
 }
 
-
-/* CURTAIN TEXT */
-
+/* CLICK TEXT */
 .curtain-text {
   position: absolute;
-
+  z-index: 20;
   top: 50%;
   left: 50%;
-
   transform: translate(-50%, -50%);
-
   color: white;
-
   font-family: "Satisfy", cursive;
   font-size: 1.6rem;
-
   white-space: nowrap;
-
-  text-shadow:
-    0 2px 4px rgba(120, 0, 60, 0.6);
-
-  z-index: 20;
-
+  text-shadow: 0 2px 4px rgba(120, 0, 60, 0.6);
   transition: opacity 0.4s ease;
 }
 
-
-/* OPEN CURTAIN */
-
+/* OPENING MOTION */
 .curtain-stage.open .curtain-button::before {
-  transform:
-    translateX(-100%)
-    skewX(-8deg);
-
+  transform: translateX(-100%) skewX(-8deg);
   transform-origin: left center;
 }
 
 .curtain-stage.open .curtain-button::after {
-  transform:
-    translateX(100%)
-    skewX(8deg);
-
+  transform: translateX(100%) skewX(8deg);
   transform-origin: right center;
 }
 
@@ -306,20 +264,14 @@ figcaption {
   pointer-events: none;
 }
 
-
 /* GOLD BAR */
-
 .curtain-stage::before {
   content: "";
-
   position: absolute;
-
   top: 0;
   left: 0;
-
   width: 100%;
   height: 7px;
-
   background:
     linear-gradient(
       90deg,
@@ -327,14 +279,9 @@ figcaption {
       #fff1a8,
       #d4af37
     );
-
-  box-shadow:
-    0 2px 8px rgba(212, 175, 55, 0.45);
-
-  opacity: 1;
-
   z-index: 30;
-
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.45);
+  opacity: 1;
   transition: opacity 0.4s ease;
 }
 
@@ -349,127 +296,38 @@ figcaption {
 
 .sparkle {
   position: fixed;
-
   color: #ff1493;
-
   pointer-events: none;
-
   z-index: 0;
-
   line-height: 1;
-
-  animation:
-    sparkleMove 3s ease-in-out infinite;
+  animation: sparkleMove 3s ease-in-out infinite;
 }
 
+/* LEFT SIDE */
+.s1 { left: 3%; top: 15%; font-size: 1.4rem; }
+.s2 { left: 7%; top: 27%; font-size: 1rem; animation-delay: 1s; }
+.s3 { left: 3%; top: 42%; font-size: 1.8rem; animation-delay: 0.5s; }
+.s4 { left: 8%; top: 57%; font-size: 1.1rem; animation-delay: 1.5s; }
+.s5 { left: 3%; top: 73%; font-size: 1.5rem; animation-delay: 2s; }
+.s6 { left: 7%; top: 88%; font-size: 0.9rem; animation-delay: 0.8s; }
 
-/* LEFT */
-
-.s1 {
-  left: 3%;
-  top: 15%;
-  font-size: 1.4rem;
-}
-
-.s2 {
-  left: 7%;
-  top: 27%;
-  font-size: 1rem;
-  animation-delay: 1s;
-}
-
-.s3 {
-  left: 3%;
-  top: 42%;
-  font-size: 1.8rem;
-  animation-delay: 0.5s;
-}
-
-.s4 {
-  left: 8%;
-  top: 57%;
-  font-size: 1.1rem;
-  animation-delay: 1.5s;
-}
-
-.s5 {
-  left: 3%;
-  top: 73%;
-  font-size: 1.5rem;
-  animation-delay: 2s;
-}
-
-.s6 {
-  left: 7%;
-  top: 88%;
-  font-size: 0.9rem;
-  animation-delay: 0.8s;
-}
-
-
-/* RIGHT */
-
-.s7 {
-  right: 3%;
-  top: 18%;
-  font-size: 1.2rem;
-  animation-delay: 1.2s;
-}
-
-.s8 {
-  right: 7%;
-  top: 32%;
-  font-size: 1.7rem;
-  animation-delay: 0.3s;
-}
-
-.s9 {
-  right: 3%;
-  top: 47%;
-  font-size: 1rem;
-  animation-delay: 1.8s;
-}
-
-.s10 {
-  right: 8%;
-  top: 62%;
-  font-size: 1.5rem;
-  animation-delay: 0.7s;
-}
-
-.s11 {
-  right: 3%;
-  top: 77%;
-  font-size: 1.1rem;
-  animation-delay: 1.5s;
-}
-
-.s12 {
-  right: 7%;
-  top: 91%;
-  font-size: 1.6rem;
-  animation-delay: 0.4s;
-}
-
+/* RIGHT SIDE */
+.s7 { right: 3%; top: 18%; font-size: 1.2rem; animation-delay: 1.2s; }
+.s8 { right: 7%; top: 32%; font-size: 1.7rem; animation-delay: 0.3s; }
+.s9 { right: 3%; top: 47%; font-size: 1rem; animation-delay: 1.8s; }
+.s10 { right: 8%; top: 62%; font-size: 1.5rem; animation-delay: 0.7s; }
+.s11 { right: 3%; top: 77%; font-size: 1.1rem; animation-delay: 1.5s; }
+.s12 { right: 7%; top: 91%; font-size: 1.6rem; animation-delay: 0.4s; }
 
 @keyframes sparkleMove {
-
   0%,
   100% {
-    transform:
-      translateY(0)
-      scale(1)
-      rotate(0deg);
-
+    transform: translateY(0) scale(1) rotate(0deg);
     opacity: 0.55;
   }
 
   50% {
-    transform:
-      translateY(-12px)
-      scale(1.2)
-      rotate(12deg);
-
+    transform: translateY(-12px) scale(1.2) rotate(12deg);
     opacity: 1;
   }
 }
@@ -477,67 +335,72 @@ figcaption {
 
 /* ==========================================
    FILM STRIPS
+   Infinite fixed pattern so the reels NEVER
+   run out when you scroll.
    ========================================== */
+
 .film-strip {
   position: fixed;
   top: 0;
   bottom: 0;
-
   width: 96px;
+  height: 100vh;
   overflow: hidden;
-
   pointer-events: none;
   z-index: 0;
 }
 
-
-/* MOVING TRACK */
-
-.film-strip-track {
-  position: absolute;
-
-  top: -110px;
-  left: 0;
-
-  width: 96px;
-
-  animation:
-    filmScroll 4s linear infinite;
+.film-strip-left {
+  left: calc(50% - 525px);
 }
 
+.film-strip-right {
+  right: calc(50% - 525px);
+}
 
-/* FILM FRAME */
-
-.film-frame {
-  position: relative;
-
-  width: 82px;
-  height: 112px;
-
-  margin: 0 auto;
-
-  box-sizing: border-box;
+/*
+  The track itself becomes the continuous film strip.
+  Existing .film-frame elements in the HTML are hidden below.
+*/
+.film-strip-track {
+  position: absolute;
+  inset: -112px 0 0;
+  width: 100%;
+  height: calc(100% + 224px);
 
   background:
-
+    /* LEFT sprocket holes */
     repeating-linear-gradient(
       to bottom,
-      #fff9fb 0,
+      #fff9fb 0px,
       #fff9fb 10px,
       transparent 10px,
       transparent 23px
-    )
-    left top / 10px 100% no-repeat,
+    ) left top / 10px 23px repeat-y,
 
+    /* RIGHT sprocket holes */
     repeating-linear-gradient(
       to bottom,
-      #fff9fb 0,
+      #fff9fb 0px,
       #fff9fb 10px,
       transparent 10px,
       transparent 23px
-    )
-    right top / 10px 100% no-repeat,
+    ) right top / 10px 23px repeat-y,
 
+    /* inner frame/window area */
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 14px,
+      rgba(255,255,255,0.23) 14px,
+      rgba(255,255,255,0.23) 96px,
+      transparent 96px,
+      transparent 108px,
+      rgba(189,79,128,0.95) 108px,
+      rgba(189,79,128,0.95) 112px
+    ),
+
+    /* warm pink film */
     linear-gradient(
       90deg,
       #cf5f91 0%,
@@ -550,68 +413,20 @@ figcaption {
       #cf5f91 100%
     );
 
-  border-top: 3px solid #bd4f80;
-  border-bottom: 3px solid #bd4f80;
-
   box-shadow:
-    inset 5px 0 8px rgba(255, 255, 255, 0.65),
-    inset -5px 0 8px rgba(130, 20, 65, 0.2),
-    0 4px 10px rgba(130, 30, 70, 0.2);
+    inset 5px 0 8px rgba(255,255,255,0.65),
+    inset -5px 0 8px rgba(130,20,65,0.2),
+    0 4px 10px rgba(130,30,70,0.2);
+
+  animation: continuousFilm 4s linear infinite;
 }
 
-
-/* FILM WINDOW */
-
-.film-frame::after {
-  content: "";
-
-  position: absolute;
-
-  top: 15px;
-  bottom: 15px;
-
-  left: 16px;
-  right: 16px;
-
-  border:
-    2px solid rgba(170, 55, 105, 0.4);
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 180, 210, 0.18)
-    );
-
-  box-shadow:
-    inset 0 0 10px rgba(130, 30, 75, 0.12),
-    inset 0 3px 6px rgba(255, 255, 255, 0.45);
+/* Hide the finite old frame stack */
+.film-frame {
+  display: none;
 }
 
-
-/* INNER FILM EDGES */
-
-.film-frame::before {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  bottom: 0;
-
-  left: 10px;
-  right: 10px;
-
-  border-left:
-    1px solid rgba(180, 60, 110, 0.25);
-
-  border-right:
-    1px solid rgba(180, 60, 110, 0.25);
-}
-
-
-@keyframes filmScroll {
-
+@keyframes continuousFilm {
   from {
     transform: translateY(-112px);
   }
@@ -628,9 +443,7 @@ figcaption {
 
 footer {
   margin: 4rem 0 2rem;
-
   color: #ff1493;
-
   font-size: 0.9rem;
 }
 
@@ -641,24 +454,12 @@ footer {
 
 @media screen and (max-width: 900px) {
 
-  /*
-     Give the projects room in the center.
-     The film strips live in the side gutters.
-  */
-
   body {
     width: auto;
     max-width: none;
-
     margin: 0;
-
-    padding:
-      1rem
-      70px;
+    padding: 1rem 70px;
   }
-
-
-  /* HEADER */
 
   header {
     width: 100%;
@@ -669,25 +470,18 @@ footer {
     font-size: 3rem;
   }
 
-
-  /* PROJECTS */
-
   .project {
     width: 100%;
-
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 3.5rem;
   }
 
-
-  /* RESPONSIVE MEDIA */
-
+  /* Make project media responsive on phones */
   .curtain-stage,
   .project-content,
   .project-content figure {
     width: 100%;
-
     height: auto;
     aspect-ratio: 4 / 5;
   }
@@ -697,15 +491,13 @@ footer {
   .project-content iframe {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
   }
 
-
-  /* FILM STRIPS */
-
+  /* Film strips sit between the outer sparkles and center content */
   .film-strip {
     width: 42px;
+    height: 100dvh;
   }
 
   .film-strip-left {
@@ -722,30 +514,7 @@ footer {
     width: 42px;
   }
 
-  .film-frame {
-    width: 38px;
-    height: 82px;
-  }
-
-  .film-frame::after {
-    top: 12px;
-    bottom: 12px;
-
-    left: 11px;
-    right: 11px;
-  }
-
-  .film-frame::before {
-    left: 8px;
-    right: 8px;
-  }
-
-
-  /*
-     SPARKLES
-     Outside the film strips
-  */
-
+  /* Sparkles stay outside the strips */
   .s1,
   .s3,
   .s5 {
@@ -809,11 +578,6 @@ footer {
 
   .film-strip-track {
     width: 34px;
-  }
-
-  .film-frame {
-    width: 30px;
-    height: 72px;
   }
 
   .curtain-text {
