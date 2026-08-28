@@ -678,100 +678,111 @@ header h1 {
   color: #ff1493 !important;
 }
 /* ==========================================
-   MOBILE FILM STRIPS
+   MOBILE FILM STRIPS — CLEAN SIDE POSITION
    ========================================== */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 700px) {
 
   /* FILM STRIPS */
 
   .film-strip {
     position: fixed !important;
+
     top: 0 !important;
     bottom: 0 !important;
 
-    width: 42px !important;
+    width: 38px !important;
 
-    overflow: hidden !important;
-
-    z-index: 0 !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
   }
 
-
-  /* LEFT REEL */
-
   .film-strip-left {
-    left: 92px !important;
+    left: 28px !important;
     right: auto !important;
   }
 
-
-  /* RIGHT REEL */
-
   .film-strip-right {
-    right: 92px !important;
+    right: 28px !important;
     left: auto !important;
   }
 
-
-  /* FILM TRACK */
-
   .film-strip-track {
-    width: 42px !important;
+    width: 38px !important;
   }
 
-
-  /* FILM FRAMES */
-
   .film-frame {
-    width: 38px !important;
-    height: 78px !important;
+    width: 35px !important;
+    height: 72px !important;
   }
 
 
   /* ==========================================
-     SPARKLES
-     FAR OUTSIDE THE REELS
+     SPARKLES — OUTSIDE THE REELS
      ========================================== */
 
   .s1,
   .s3,
   .s5 {
-    left: 12px !important;
+    left: 4px !important;
   }
 
   .s2,
   .s4,
   .s6 {
-    left: 25px !important;
+    left: 8px !important;
   }
 
   .s7,
   .s9,
   .s11 {
-    right: 12px !important;
+    right: 4px !important;
   }
 
   .s8,
   .s10,
   .s12 {
-    right: 25px !important;
+    right: 8px !important;
   }
 
 
   /* ==========================================
-     PROJECTS STAY ABOVE DECOR
+     EVERYTHING IMPORTANT ABOVE DECOR
      ========================================== */
 
+  header,
+  main,
+  footer,
   .project,
+  .project h2,
+  .project .meta,
+  .description,
   .project-content,
-  .description {
+  figure {
     position: relative !important;
     z-index: 5 !important;
   }
 
   .sparkle {
     z-index: 2 !important;
+  }
+
+}
+/* ==========================================
+   MOBILE — SLIGHTLY SMALLER PROJECTS
+   ========================================== */
+
+@media screen and (max-width: 700px) {
+
+  .project {
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .project-content,
+  .curtain-stage {
+    width: 100%;
   }
 
 }
