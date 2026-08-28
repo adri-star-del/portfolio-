@@ -479,27 +479,15 @@ figcaption {
    FILM STRIPS
    ========================================== */
 .film-strip {
-  position: absolute;
-
+  position: fixed;
   top: 0;
   bottom: 0;
 
   width: 96px;
-  height: 100%;
-
   overflow: hidden;
 
   pointer-events: none;
-
   z-index: 0;
-}
-
-.film-strip-left {
-  left: calc(50% - 525px);
-}
-
-.film-strip-right {
-  right: calc(50% - 525px);
 }
 
 
