@@ -684,74 +684,66 @@ header h1 {
 @media screen and (max-width: 700px) {
 
   body {
-    max-width: none !important;
-    width: auto !important;
-    margin: 0 !important;
-    padding: 1rem 1.25rem !important;
+    max-width: none;
+    width: auto;
+    margin: 0;
+    padding: 1rem 1.25rem;
   }
 
-  /* SMALLER PROJECT COLUMN */
-
+  /* Smaller centered projects */
   .project {
-    width: 90% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    width: 82%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  /* FILM STRIPS */
-
+  /* Smaller film strips */
   .film-strip {
-    width: 38px !important;
+    width: 34px;
   }
 
   .film-strip-left {
-    left: 38px !important;
-    right: auto !important;
+    left: 38px;
+    right: auto;
   }
 
   .film-strip-right {
-    right: 38px !important;
-    left: auto !important;
+    right: 38px;
+    left: auto;
   }
 
   .film-strip-track {
-    width: 38px !important;
+    width: 34px;
   }
 
   .film-frame {
-    width: 34px !important;
-    height: 72px !important;
+    width: 30px;
+    height: 72px;
   }
 
-  /* SPARKLES STAY OUTSIDE */
-
+  /* Sparkles outside the film strips */
   .s1,
   .s3,
   .s5 {
-    left: 5px !important;
+    left: 4px;
   }
 
   .s2,
   .s4,
   .s6 {
-    left: 12px !important;
+    left: 10px;
   }
 
   .s7,
   .s9,
   .s11 {
-    right: 5px !important;
+    right: 4px;
   }
 
   .s8,
   .s10,
   .s12 {
-    right: 12px !important;
+    right: 10px;
   }
 
-}
-}
-  body {
-    background: hotpink !important;
-  }
 }
