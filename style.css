@@ -678,79 +678,97 @@ header h1 {
   color: #ff1493 !important;
 }
 /* ==========================================
-   MOBILE LAYOUT
-   Keep film strips visible without covering
-   the projects or sparkles
+/* ==========================================
+   MOBILE — FILM STRIPS + SPARKLES
    ========================================== */
 
 @media (max-width: 700px) {
 
-  /* FILM STRIPS */
+  /* ------------------------------------------
+     FILM STRIPS
+     ------------------------------------------ */
 
   .film-strip {
-    width: 48px;
+    position: fixed;
+
+    top: 0;
+    bottom: 0;
+
+    width: 42px;
+
+    z-index: 0;
   }
 
   .film-strip-left {
-    left: 4px;
+    left: 0;
+    right: auto;
   }
 
   .film-strip-right {
-    right: 4px;
+    right: 0;
+    left: auto;
   }
 
   .film-strip-track {
-    width: 48px;
+    width: 42px;
   }
 
   .film-frame {
-    width: 42px;
+    width: 38px;
     height: 72px;
   }
 
 
-  /* MOVE SPARKLES FURTHER OUT */
+  /* ------------------------------------------
+     SPARKLES
+     Keep them OUTSIDE the project area
+     ------------------------------------------ */
 
   .s1,
   .s3,
   .s5 {
-    left: 1px;
+    left: 2px;
   }
 
   .s2,
   .s4,
   .s6 {
-    left: 18px;
+    left: 5px;
   }
 
   .s7,
   .s9,
   .s11 {
-    right: 1px;
+    right: 2px;
   }
 
   .s8,
   .s10,
   .s12 {
-    right: 18px;
+    right: 5px;
   }
 
 
-  /* KEEP THE ACTUAL PROJECT CONTENT CLEAR */
+  /* ------------------------------------------
+     PROJECTS
+     Give them their own space
+     ------------------------------------------ */
 
-  .project,
-  .project-content,
-  .description {
+  .project {
     position: relative;
-    z-index: 5;
+    z-index: 2;
+
+    margin-left: 45px;
+    margin-right: 45px;
   }
 
 
-  /* FILM STRIPS + SPARKLES STAY BEHIND PROJECT */
+  /* ------------------------------------------
+     PROJECT MEDIA
+     ------------------------------------------ */
 
-  .film-strip,
-  .sparkle {
-    z-index: 1;
+  .curtain-stage {
+    width: 100%;
   }
 
 }
