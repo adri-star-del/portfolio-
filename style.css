@@ -678,32 +678,39 @@ header h1 {
   color: #ff1493 !important;
 }
 /* ==========================================
-   MOBILE FILM STRIPS — CLEAN SIDE POSITION
+   MOBILE OVERRIDE
    ========================================== */
 
 @media screen and (max-width: 700px) {
 
+  body {
+    max-width: none !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 1rem 1.25rem !important;
+  }
+
+  /* SMALLER PROJECT COLUMN */
+
+  .project {
+    width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
   /* FILM STRIPS */
 
   .film-strip {
-    position: fixed !important;
-
-    top: 0 !important;
-    bottom: 0 !important;
-
     width: 38px !important;
-
-    z-index: 1 !important;
-    pointer-events: none !important;
   }
 
   .film-strip-left {
-    left: 28px !important;
+    left: 38px !important;
     right: auto !important;
   }
 
   .film-strip-right {
-    right: 28px !important;
+    right: 38px !important;
     left: auto !important;
   }
 
@@ -712,77 +719,35 @@ header h1 {
   }
 
   .film-frame {
-    width: 35px !important;
+    width: 34px !important;
     height: 72px !important;
   }
 
-
-  /* ==========================================
-     SPARKLES — OUTSIDE THE REELS
-     ========================================== */
+  /* SPARKLES STAY OUTSIDE */
 
   .s1,
   .s3,
   .s5 {
-    left: 4px !important;
+    left: 5px !important;
   }
 
   .s2,
   .s4,
   .s6 {
-    left: 8px !important;
+    left: 12px !important;
   }
 
   .s7,
   .s9,
   .s11 {
-    right: 4px !important;
+    right: 5px !important;
   }
 
   .s8,
   .s10,
   .s12 {
-    right: 8px !important;
-  }
-
-
-  /* ==========================================
-     EVERYTHING IMPORTANT ABOVE DECOR
-     ========================================== */
-
-  header,
-  main,
-  footer,
-  .project,
-  .project h2,
-  .project .meta,
-  .description,
-  .project-content,
-  figure {
-    position: relative !important;
-    z-index: 5 !important;
-  }
-
-  .sparkle {
-    z-index: 2 !important;
+    right: 12px !important;
   }
 
 }
-/* ==========================================
-   MOBILE — SLIGHTLY SMALLER PROJECTS
-   ========================================== */
-
-@media screen and (max-width: 700px) {
-
-  .project {
-    width: 88%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .project-content,
-  .curtain-stage {
-    width: 100%;
-  }
-
 }
