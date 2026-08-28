@@ -13,16 +13,6 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
-
-  <script>
-  document.body.insertAdjacentHTML(
-    "afterbegin",
-    '<div style="position:fixed;top:0;left:0;z-index:999999;background:black;color:white;padding:8px;font-size:16px;">WIDTH: ' +
-    window.innerWidth +
-    'px</div>'
-  );
-</script>
-
 <body>
 <!-- MOVING FILM STRIPS -->
 
@@ -255,22 +245,15 @@
     <p>Adri Espinoza ~ age@ucsb.edu ~ 2026</p>
   </footer>
 
-
-  <!-- CURTAIN JAVASCRIPT -->
-
-  <script>
-
-    document.querySelectorAll('.curtain-button').forEach(button => {
-
-      button.addEventListener('click', () => {
-
-        button.parentElement.classList.add('open');
-
-      });
-
-    });
+<!-- CURTAIN + FILM STRIP JAVASCRIPT -->
 
 <script>
+  document.querySelectorAll('.curtain-button').forEach(button => {
+    button.addEventListener('click', () => {
+      button.parentElement.classList.add('open');
+    });
+  });
+
   function fillFilmStrips() {
     const tracks = document.querySelectorAll(".film-strip-track");
 
@@ -280,6 +263,7 @@
       if (!frame) return;
 
       const frameHeight = frame.offsetHeight || 72;
+
       const amountNeeded =
         Math.ceil(window.innerHeight / frameHeight) + 4;
 
@@ -292,6 +276,6 @@
   window.addEventListener("load", fillFilmStrips);
   window.addEventListener("resize", fillFilmStrips);
 </script>
-</body>
 
+</body>
 </html>
