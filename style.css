@@ -678,84 +678,100 @@ header h1 {
   color: #ff1493 !important;
 }
 /* ==========================================
-   MOBILE FILM STRIPS + SPARKLES
+   MOBILE FILM STRIPS
    ========================================== */
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
 
-  /* ------------------------------------------
-     FILM STRIPS
-     Move them inward from the phone edges
-     ------------------------------------------ */
+  /* FILM STRIPS */
 
   .film-strip {
     position: fixed !important;
-
     top: 0 !important;
     bottom: 0 !important;
 
-    width: 48px !important;
+    width: 42px !important;
 
-    z-index: 1 !important;
+    overflow: hidden !important;
+
+    z-index: 0 !important;
   }
 
+
+  /* LEFT REEL */
+
   .film-strip-left {
-    left: 62px !important;
+    left: 92px !important;
     right: auto !important;
   }
 
+
+  /* RIGHT REEL */
+
   .film-strip-right {
-    right: 62px !important;
+    right: 92px !important;
     left: auto !important;
   }
 
+
+  /* FILM TRACK */
+
   .film-strip-track {
-    width: 48px !important;
+    width: 42px !important;
   }
 
+
+  /* FILM FRAMES */
+
   .film-frame {
-    width: 44px !important;
+    width: 38px !important;
     height: 78px !important;
   }
 
 
-  /* ------------------------------------------
+  /* ==========================================
      SPARKLES
-     FARTHER OUTSIDE THE FILM STRIPS
-     ------------------------------------------ */
+     FAR OUTSIDE THE REELS
+     ========================================== */
 
   .s1,
   .s3,
   .s5 {
-    left: 8px !important;
+    left: 12px !important;
   }
 
   .s2,
   .s4,
   .s6 {
-    left: 18px !important;
+    left: 25px !important;
   }
 
   .s7,
   .s9,
   .s11 {
-    right: 8px !important;
+    right: 12px !important;
   }
 
   .s8,
   .s10,
   .s12 {
-    right: 18px !important;
+    right: 25px !important;
   }
 
 
-  /* ------------------------------------------
-     PROJECT CONTENT
-     ------------------------------------------ */
+  /* ==========================================
+     PROJECTS STAY ABOVE DECOR
+     ========================================== */
 
-  .project {
+  .project,
+  .project-content,
+  .description {
     position: relative !important;
     z-index: 5 !important;
+  }
+
+  .sparkle {
+    z-index: 2 !important;
   }
 
 }
