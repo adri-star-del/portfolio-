@@ -387,47 +387,18 @@ figcaption {
       transparent 23px
     ) right top / 10px 23px repeat-y,
 
-  /* INNER FILM WINDOWS */
-repeating-linear-gradient(
-  to bottom,
-  transparent 0px,
-  transparent 14px,
-
-  rgba(255,255,255,0.16) 14px,
-  rgba(255,255,255,0.16) 96px,
-
-  transparent 96px,
-  transparent 108px,
-
-  rgba(189,79,128,0.95) 108px,
-  rgba(189,79,128,0.95) 112px
-),
-     .film-strip-track::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 16px;
-  right: 16px;
-
-  background:
+    /* inner frame/window area */
     repeating-linear-gradient(
       to bottom,
       transparent 0px,
-      transparent 15px,
-
-      rgba(255,255,255,0.30) 15px,
-      rgba(255,255,255,0.30) 94px,
-
-      transparent 94px,
-      transparent 112px
-    );
-
-  border-left: 2px solid rgba(170,55,105,0.35);
-  border-right: 2px solid rgba(170,55,105,0.35);
-
-  pointer-events: none;
-}
+      transparent 14px,
+      rgba(255,255,255,0.23) 14px,
+      rgba(255,255,255,0.23) 96px,
+      transparent 96px,
+      transparent 108px,
+      rgba(189,79,128,0.95) 108px,
+      rgba(189,79,128,0.95) 112px
+    ),
 
     /* warm pink film */
     linear-gradient(
