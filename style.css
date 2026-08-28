@@ -678,94 +678,84 @@ header h1 {
   color: #ff1493 !important;
 }
 /* ==========================================
-/* ==========================================
-   MOBILE FILM STRIPS — FINAL POSITION
+   MOBILE FILM STRIPS + SPARKLES
    ========================================== */
 
 @media screen and (max-width: 700px) {
 
-  /* FILM STRIPS */
+  /* ------------------------------------------
+     FILM STRIPS
+     Move them inward from the phone edges
+     ------------------------------------------ */
 
   .film-strip {
     position: fixed !important;
+
     top: 0 !important;
     bottom: 0 !important;
 
-    width: 40px !important;
+    width: 48px !important;
 
     z-index: 1 !important;
   }
 
   .film-strip-left {
-    left: 32px !important;
+    left: 62px !important;
     right: auto !important;
   }
 
   .film-strip-right {
-    right: 32px !important;
+    right: 62px !important;
     left: auto !important;
   }
 
   .film-strip-track {
-    width: 40px !important;
+    width: 48px !important;
   }
 
   .film-frame {
-    width: 36px !important;
-    height: 72px !important;
+    width: 44px !important;
+    height: 78px !important;
   }
 
 
-  /* ==========================================
-     SPARKLES — FAR OUTSIDE
-     ========================================== */
+  /* ------------------------------------------
+     SPARKLES
+     FARTHER OUTSIDE THE FILM STRIPS
+     ------------------------------------------ */
 
   .s1,
   .s3,
   .s5 {
-    left: 2px !important;
+    left: 8px !important;
   }
 
   .s2,
   .s4,
   .s6 {
-    left: 8px !important;
+    left: 18px !important;
   }
 
   .s7,
   .s9,
   .s11 {
-    right: 2px !important;
+    right: 8px !important;
   }
 
   .s8,
   .s10,
   .s12 {
-    right: 8px !important;
+    right: 18px !important;
   }
 
 
-  /* ==========================================
-     PROJECTS — ABOVE DECORATIONS
-     ========================================== */
+  /* ------------------------------------------
+     PROJECT CONTENT
+     ------------------------------------------ */
 
   .project {
     position: relative !important;
     z-index: 5 !important;
-  }
-
-  .project-content {
-    position: relative !important;
-    z-index: 5 !important;
-  }
-
-  .description {
-    position: relative !important;
-    z-index: 5 !important;
-  }
-
-  .sparkle {
-    z-index: 2 !important;
   }
 
 }
