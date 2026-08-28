@@ -270,8 +270,28 @@
 
     });
 
-  </script>
+<script>
+  function fillFilmStrips() {
+    const tracks = document.querySelectorAll(".film-strip-track");
 
+    tracks.forEach(track => {
+      const frame = track.querySelector(".film-frame");
+
+      if (!frame) return;
+
+      const frameHeight = frame.offsetHeight || 72;
+      const amountNeeded =
+        Math.ceil(window.innerHeight / frameHeight) + 4;
+
+      while (track.children.length < amountNeeded) {
+        track.appendChild(frame.cloneNode(true));
+      }
+    });
+  }
+
+  window.addEventListener("load", fillFilmStrips);
+  window.addEventListener("resize", fillFilmStrips);
+</script>
 </body>
 
 </html>
