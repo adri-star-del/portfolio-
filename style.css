@@ -1,22 +1,16 @@
-/* MAT 189 starter stylesheet */
-
-body {
-  font-family: Garamond, Georgia, "Times New Roman", serif;
-  line-height: 1.5;
-  color: #1a1a1a;
-
-  max-width: 42rem;
-  margin: 0 auto;
-  padding: 1.5rem;
-
-  background: transparent;
-}
+/* ==========================================
+   ADRI ESPINOZA PORTFOLIO
+   MAT 189
+   ========================================== */
 
 
-/* FULL PAGE BACKGROUND */
+/* ==========================================
+   PAGE
+   ========================================== */
 
 html {
   min-height: 100%;
+
   background:
     radial-gradient(
       ellipse at center,
@@ -31,69 +25,344 @@ html {
   background-size: cover;
 }
 
-header { margin: 2rem 0 3rem; }
+body {
+  font-family: Garamond, Georgia, "Times New Roman", serif;
+  line-height: 1.5;
+  color: #1a1a1a;
+
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+
+  background: transparent;
+}
+
+
 /* ==========================================
-   MAIN NAME — HERO TITLE
+   HEADER
    ========================================== */
-/* ==========================================
-   MAIN NAME — HERO TITLE
-   ========================================== */
+
+header {
+  margin: 2rem 0 3rem;
+}
 
 header h1 {
   margin: 0;
 
-  font-family: 'Lobster', cursive;
-
+  font-family: "Lobster", cursive;
   font-size: 3.8rem;
   font-weight: 400;
 
-  color: #ff1493 !important;
+  color: #ff1493;
 
-  -webkit-text-stroke: .5px white;
+  -webkit-text-stroke: 0.5px white;
+  -webkit-text-fill-color: #ff1493;
 
   text-shadow:
-    0 2px 0 rgba(255, 255, 255, 0.9),
+    0 2px 0 white,
     2px 3px 0 #e60073,
     4px 5px 0 #d40069,
     6px 7px 10px rgba(190, 0, 100, 0.25);
 }
-header p { color: #666; margin: 0.25rem 0 0; }
 
-.project { margin: 0 0 4rem; }
+header p {
+  color: #ff1493;
+  margin: 0.25rem 0 0;
+}
+
+
+/* ==========================================
+   PROJECTS
+   ========================================== */
+
+.project {
+  margin: 0 0 4rem;
+}
+
 .project h2 {
   margin: 0 0 0.25rem;
 
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   font-size: 2.1rem;
   font-weight: 400;
 
-  color: #f51b8f !important;
-
-  -webkit-text-stroke: 0;
+  color: #f51b8f;
 
   text-shadow:
     0 1px 0 rgba(255, 255, 255, 0.75),
     0 2px 4px rgba(190, 0, 100, 0.18);
 }
-.project .meta { color: #666; font-size: 0.9rem; margin: 0 0 1rem; }
 
-figure { margin: 1.5rem 0; }
-img, video { max-width: 100%; display: block; }
-figcaption { color: #666; font-size: 0.85rem; margin-top: 0.4rem; }
+.project .meta {
+  color: #ff1493;
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+}
 
-footer { margin: 4rem 0 2rem; color: #666; font-size: 0.9rem; }
-/* ✨ Barbie floating sparkles */
+.project-content p,
+.project > p {
+  color: #ff1493;
+}
+
+.description {
+  text-align: center;
+  margin: 1.5rem auto 0;
+}
+
+
+/* ==========================================
+   MEDIA
+   ========================================== */
+
+figure {
+  margin: 0;
+}
+
+.curtain-stage {
+  position: relative;
+
+  width: 100%;
+  height: 575px;
+
+  overflow: hidden;
+}
+
+.project-content {
+  position: relative;
+
+  width: 100%;
+  height: 575px;
+
+  z-index: 1;
+}
+
+.project-content figure {
+  width: 100%;
+  height: 575px;
+
+  margin: 0;
+}
+
+.project-content img,
+.project-content video,
+.project-content iframe {
+  width: 100%;
+  height: 575px;
+
+  display: block;
+  border: none;
+
+  object-fit: cover;
+}
+
+figcaption {
+  color: #ff1493;
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+}
+
+
+/* ==========================================
+   BARBIE THEATER CURTAIN
+   ========================================== */
+
+.curtain-button {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+/* LEFT CURTAIN */
+
+.curtain-button::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 50%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #a80055 0%,
+      #d9006c 12%,
+      #ff4fa3 25%,
+      #e60073 38%,
+      #ff69b4 50%,
+      #d9006c 63%,
+      #ff4fa3 76%,
+      #c40062 90%,
+      #a80055 100%
+    );
+
+  box-shadow:
+    inset 8px 0 15px rgba(100, 0, 50, 0.25),
+    inset -8px 0 15px rgba(100, 0, 50, 0.25);
+
+  transition:
+    transform 1.6s cubic-bezier(0.55, 0, 0.15, 1);
+}
+
+
+/* RIGHT CURTAIN */
+
+.curtain-button::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 50%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #a80055 0%,
+      #c40062 10%,
+      #ff4fa3 24%,
+      #d9006c 37%,
+      #ff69b4 50%,
+      #e60073 63%,
+      #ff4fa3 76%,
+      #d9006c 90%,
+      #a80055 100%
+    );
+
+  box-shadow:
+    inset 8px 0 15px rgba(100, 0, 50, 0.25),
+    inset -8px 0 15px rgba(100, 0, 50, 0.25);
+
+  transition:
+    transform 1.6s cubic-bezier(0.55, 0, 0.15, 1);
+}
+
+
+/* CURTAIN TEXT */
+
+.curtain-text {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  color: white;
+
+  font-family: "Satisfy", cursive;
+  font-size: 1.6rem;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 2px 4px rgba(120, 0, 60, 0.6);
+
+  z-index: 20;
+
+  transition: opacity 0.4s ease;
+}
+
+
+/* OPEN CURTAIN */
+
+.curtain-stage.open .curtain-button::before {
+  transform:
+    translateX(-100%)
+    skewX(-8deg);
+
+  transform-origin: left center;
+}
+
+.curtain-stage.open .curtain-button::after {
+  transform:
+    translateX(100%)
+    skewX(8deg);
+
+  transform-origin: right center;
+}
+
+.curtain-stage.open .curtain-text {
+  opacity: 0;
+}
+
+.curtain-stage.open .curtain-button {
+  pointer-events: none;
+}
+
+
+/* GOLD BAR */
+
+.curtain-stage::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 7px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #d4af37,
+      #fff1a8,
+      #d4af37
+    );
+
+  box-shadow:
+    0 2px 8px rgba(212, 175, 55, 0.45);
+
+  opacity: 1;
+
+  z-index: 30;
+
+  transition: opacity 0.4s ease;
+}
+
+.curtain-stage.open::before {
+  opacity: 0;
+}
+
+
+/* ==========================================
+   SPARKLES
+   ========================================== */
 
 .sparkle {
   position: fixed;
+
   color: #ff1493;
+
   pointer-events: none;
+
   z-index: 0;
+
   line-height: 1;
-  animation: sparkleMove 3s ease-in-out infinite;
+
+  animation:
+    sparkleMove 3s ease-in-out infinite;
 }
 
-/* LEFT SIDE */
+
+/* LEFT */
 
 .s1 {
   left: 3%;
@@ -136,7 +405,8 @@ footer { margin: 4rem 0 2rem; color: #666; font-size: 0.9rem; }
   animation-delay: 0.8s;
 }
 
-/* RIGHT SIDE */
+
+/* RIGHT */
 
 .s7 {
   right: 3%;
@@ -180,276 +450,37 @@ footer { margin: 4rem 0 2rem; color: #666; font-size: 0.9rem; }
   animation-delay: 0.4s;
 }
 
-/* ✨ Gentle floating movement */
 
 @keyframes sparkleMove {
-  0%, 100% {
-    transform: translateY(0) scale(1) rotate(0deg);
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1)
+      rotate(0deg);
+
     opacity: 0.55;
   }
 
   50% {
-    transform: translateY(-12px) scale(1.2) rotate(12deg);
+    transform:
+      translateY(-12px)
+      scale(1.2)
+      rotate(12deg);
+
     opacity: 1;
   }
 }
-/* ================================
-/* ================================
-/* ================================
-   BARBIE THEATER CURTAIN
-   ================================ */
 
-.curtain-stage {
-  position: relative;
-  overflow: hidden;
-}
-
-.project-content {
-  position: relative;
-  z-index: 1;
-}
-
-/* CURTAIN BUTTON */
-
-.curtain-button {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  border: none;
-  padding: 0;
-
-  background: transparent;
-  cursor: pointer;
-
-  z-index: 10;
-}
-
-/* LEFT CURTAIN */
-
-.curtain-button::before {
-  content: "";
-
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 50%;
-  height: 100%;
-
-  background:
-    linear-gradient(
-      90deg,
-      #a80055 0%,
-      #d9006c 12%,
-      #ff4fa3 25%,
-      #e60073 38%,
-      #ff69b4 50%,
-      #d9006c 63%,
-      #ff4fa3 76%,
-      #c40062 90%,
-      #a80055 100%
-    );
-
-  box-shadow:
-    inset 8px 0 15px rgba(100, 0, 50, 0.25),
-    inset -8px 0 15px rgba(100, 0, 50, 0.25);
-
-  transition:
-    transform 1.6s cubic-bezier(0.55, 0, 0.15, 1);
-}
-
-/* RIGHT CURTAIN */
-
-.curtain-button::after {
-  content: "";
-
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  width: 50%;
-  height: 100%;
-
-  background:
-    linear-gradient(
-      90deg,
-      #a80055 0%,
-      #c40062 10%,
-      #ff4fa3 24%,
-      #d9006c 37%,
-      #ff69b4 50%,
-      #e60073 63%,
-      #ff4fa3 76%,
-      #d9006c 90%,
-      #a80055 100%
-    );
-
-  box-shadow:
-    inset 8px 0 15px rgba(100, 0, 50, 0.25),
-    inset -8px 0 15px rgba(100, 0, 50, 0.25);
-
-  transition:
-    transform 1.6s cubic-bezier(0.55, 0, 0.15, 1);
-}
-
-/* CLICK TEXT */
-
-.curtain-text {
-  position: absolute;
-
-  z-index: 20;
-
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-
-  color: white;
-
-  font-family: 'Satisfy', cursive;
-  font-size: 1.6rem;
-
-  white-space: nowrap;
-
-  text-shadow:
-    0 2px 4px rgba(120, 0, 60, 0.6);
-
-  transition: opacity 0.4s ease;
-}
-
-/* ================================
-   OPENING MOTION
-   ================================ */
-
-.curtain-stage.open .curtain-button::before {
-  transform:
-    translateX(-100%)
-    skewX(-8deg);
-
-  transform-origin: left center;
-}
-
-.curtain-stage.open .curtain-button::after {
-  transform:
-    translateX(100%)
-    skewX(8deg);
-
-  transform-origin: right center;
-}
-
-/* TEXT DISAPPEARS */
-
-.curtain-stage.open .curtain-text {
-  opacity: 0;
-}
-
-/* BUTTON STOPS BLOCKING PROJECT */
-
-.curtain-stage.open .curtain-button {
-  pointer-events: none;
-}
-
-/* ================================
-   GOLD BAR
-   ================================ */
-
-.curtain-stage::before {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 7px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #d4af37,
-      #fff1a8,
-      #d4af37
-    );
-
-  z-index: 30;
-
-  box-shadow:
-    0 2px 8px rgba(212, 175, 55, 0.45);
-
-  opacity: 1;
-  transition: opacity 0.4s ease;
-}
-
-.curtain-stage.open::before {
-  opacity: 0;
-}
-.description {
-  text-align: center;
-  margin: 1.5rem auto 0;
-}
-/* ================================
-   /* ================================
-   MATCH ALL PROJECT MEDIA SIZES
-   ================================ */
 
 /* ==========================================
-   PROJECT MEDIA
-   ========================================== */
-
-/* ==========================================
-   PROJECT MEDIA — SAME SIZE FOR EVERYTHING
-   ========================================== */
-
-.curtain-stage {
-  position: relative;
-  width: 100%;
-  height: 575px;
-  overflow: hidden;
-}
-
-.project-content {
-  position: relative;
-  width: 100%;
-  height: 575px;
-  z-index: 1;
-}
-
-.project-content figure {
-  width: 100%;
-  height: 575px;
-  margin: 0;
-}
-
-.project-content img,
-.project-content video,
-.project-content iframe {
-  width: 100%;
-  height: 575px;
-  object-fit: cover;
-  display: block;
-  border: none;
-}
-/* MEDIUM PINK SECONDARY TEXT */
-
-header p,
-.project .meta,
-figcaption,
-footer {
-  color: #ff1493;
-}
-/* =================================
-/* ==========================================
-/* ==========================================
-/* ==========================================
-   WARM BARBIE FILM STRIPS
+   FILM STRIPS
    ========================================== */
 
 .film-strip {
   position: fixed;
+
   top: 0;
   bottom: 0;
 
@@ -457,14 +488,10 @@ footer {
 
   overflow: hidden;
 
-  z-index: 0;
   pointer-events: none;
+
+  z-index: 0;
 }
-
-
-/* ==========================================
-   POSITION
-   ========================================== */
 
 .film-strip-left {
   left: calc(50% - 525px);
@@ -475,9 +502,7 @@ footer {
 }
 
 
-/* ==========================================
-   MOVING TRACK
-   ========================================== */
+/* MOVING TRACK */
 
 .film-strip-track {
   position: absolute;
@@ -487,13 +512,12 @@ footer {
 
   width: 96px;
 
-  animation: filmScroll 4s linear infinite;
+  animation:
+    filmScroll 4s linear infinite;
 }
 
 
-/* ==========================================
-   FILM FRAME
-   ========================================== */
+/* FILM FRAME */
 
 .film-frame {
   position: relative;
@@ -507,25 +531,24 @@ footer {
 
   background:
 
-    /* LEFT sprocket holes */
     repeating-linear-gradient(
       to bottom,
-      #fff9fb 0px,
+      #fff9fb 0,
       #fff9fb 10px,
       transparent 10px,
       transparent 23px
-    ) left top / 10px 100% no-repeat,
+    )
+    left top / 10px 100% no-repeat,
 
-    /* RIGHT sprocket holes */
     repeating-linear-gradient(
       to bottom,
-      #fff9fb 0px,
+      #fff9fb 0,
       #fff9fb 10px,
       transparent 10px,
       transparent 23px
-    ) right top / 10px 100% no-repeat,
+    )
+    right top / 10px 100% no-repeat,
 
-    /* WARM PINK FILM */
     linear-gradient(
       90deg,
       #cf5f91 0%,
@@ -542,21 +565,13 @@ footer {
   border-bottom: 3px solid #bd4f80;
 
   box-shadow:
-
-    /* bright raised edge */
-    inset 5px 0 8px rgba(255,255,255,0.65),
-
-    /* darker opposite edge */
-    inset -5px 0 8px rgba(130,20,65,0.2),
-
-    /* external depth */
-    0 4px 10px rgba(130,30,70,0.2);
+    inset 5px 0 8px rgba(255, 255, 255, 0.65),
+    inset -5px 0 8px rgba(130, 20, 65, 0.2),
+    0 4px 10px rgba(130, 30, 70, 0.2);
 }
 
 
-/* ==========================================
-   FILM FRAME WINDOW
-   ========================================== */
+/* FILM WINDOW */
 
 .film-frame::after {
   content: "";
@@ -569,24 +584,23 @@ footer {
   left: 16px;
   right: 16px;
 
-  border: 2px solid rgba(170,55,105,0.4);
+  border:
+    2px solid rgba(170, 55, 105, 0.4);
 
   background:
     linear-gradient(
       135deg,
-      rgba(255,255,255,0.5),
-      rgba(255,180,210,0.18)
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 180, 210, 0.18)
     );
 
   box-shadow:
-    inset 0 0 10px rgba(130,30,75,0.12),
-    inset 0 3px 6px rgba(255,255,255,0.45);
+    inset 0 0 10px rgba(130, 30, 75, 0.12),
+    inset 0 3px 6px rgba(255, 255, 255, 0.45);
 }
 
 
-/* ==========================================
-   INNER FILM EDGES
-   ========================================== */
+/* INNER FILM EDGES */
 
 .film-frame::before {
   content: "";
@@ -599,14 +613,13 @@ footer {
   left: 10px;
   right: 10px;
 
-  border-left: 1px solid rgba(180,60,110,0.25);
-  border-right: 1px solid rgba(180,60,110,0.25);
+  border-left:
+    1px solid rgba(180, 60, 110, 0.25);
+
+  border-right:
+    1px solid rgba(180, 60, 110, 0.25);
 }
 
-
-/* ==========================================
-   FASTER FILM MOTION
-   ========================================== */
 
 @keyframes filmScroll {
 
@@ -617,99 +630,192 @@ footer {
   to {
     transform: translateY(0);
   }
-
 }
+
+
 /* ==========================================
-/* ==========================================
-   TITLE STYLING
+   FOOTER
    ========================================== */
 
-/* MAIN NAME */
+footer {
+  margin: 4rem 0 2rem;
 
-header h1 {
-  color: #f51b8f !important;
+  color: #ff1493;
 
-  -webkit-text-stroke: 0.3px white;
-
-  text-shadow:
-    0 2px 4px rgba(190, 0, 100, 0.25);
+  font-size: 0.9rem;
 }
 
 
-/* PROJECT TITLES */
-
-.project h2 {
-  color: #f51b8f !important;
-
-  -webkit-text-stroke: 0;
-
-  text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.75),
-    0 2px 4px rgba(190, 0, 100, 0.18);
-}
 /* ==========================================
-   FINAL ADRI ESPINOZA TITLE
-   ========================================== */
-
-header h1 {
-  margin: 0 !important;
-
-  font-family: 'Lobster', cursive !important;
-  font-size: 3.8rem !important;
-  font-weight: 400 !important;
-
-  color: #ff1493 !important;
-
-  -webkit-text-stroke: 0.5px white !important;
-  -webkit-text-fill-color: #ff1493 !important;
-
-  text-shadow:
-    0 2px 0 white,
-    2px 3px 0 #e60073,
-    4px 5px 0 #d40069,
-    6px 7px 10px rgba(190, 0, 100, 0.25) !important;
-}
-/* ==========================================
-   PROJECT DESCRIPTION TEXT
-   ========================================== */
-
-.project-content p,
-.project > p {
-  color: #ff1493 !important;
-}
-/* ==========================================
-   MOBILE OVERRIDE
+   MOBILE
    ========================================== */
 
 @media screen and (max-width: 900px) {
 
+  /*
+     Give the projects room in the center.
+     The film strips live in the side gutters.
+  */
+
   body {
-    max-width: none;
     width: auto;
+    max-width: none;
+
     margin: 0;
-    padding: 1rem 1.25rem;
+
+    padding:
+      1rem
+      70px;
   }
 
-  /* Smaller centered projects */
+
+  /* HEADER */
+
+  header {
+    width: 100%;
+    margin: 1.5rem auto 2.5rem;
+  }
+
+  header h1 {
+    font-size: 3rem;
+  }
+
+
+  /* PROJECTS */
+
   .project {
-    width: 82%;
+    width: 100%;
+
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 3.5rem;
   }
 
-  /* Smaller film strips */
+
+  /* RESPONSIVE MEDIA */
+
+  .curtain-stage,
+  .project-content,
+  .project-content figure {
+    width: 100%;
+
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .project-content img,
+  .project-content video,
+  .project-content iframe {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+
+  /* FILM STRIPS */
+
+  .film-strip {
+    width: 42px;
+  }
+
+  .film-strip-left {
+    left: 20px;
+    right: auto;
+  }
+
+  .film-strip-right {
+    right: 20px;
+    left: auto;
+  }
+
+  .film-strip-track {
+    width: 42px;
+  }
+
+  .film-frame {
+    width: 38px;
+    height: 82px;
+  }
+
+  .film-frame::after {
+    top: 12px;
+    bottom: 12px;
+
+    left: 11px;
+    right: 11px;
+  }
+
+  .film-frame::before {
+    left: 8px;
+    right: 8px;
+  }
+
+
+  /*
+     SPARKLES
+     Outside the film strips
+  */
+
+  .s1,
+  .s3,
+  .s5 {
+    left: 2px;
+  }
+
+  .s2,
+  .s4,
+  .s6 {
+    left: 5px;
+  }
+
+  .s7,
+  .s9,
+  .s11 {
+    right: 2px;
+  }
+
+  .s8,
+  .s10,
+  .s12 {
+    right: 5px;
+  }
+
+  .sparkle {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ==========================================
+   SMALL PHONES
+   ========================================== */
+
+@media screen and (max-width: 500px) {
+
+  body {
+    padding-left: 58px;
+    padding-right: 58px;
+  }
+
+  header h1 {
+    font-size: 2.7rem;
+  }
+
+  .project h2 {
+    font-size: 1.8rem;
+  }
+
   .film-strip {
     width: 34px;
   }
 
   .film-strip-left {
-    left: 38px;
-    right: auto;
+    left: 17px;
   }
 
   .film-strip-right {
-    right: 38px;
-    left: auto;
+    right: 17px;
   }
 
   .film-strip-track {
@@ -721,29 +827,7 @@ header h1 {
     height: 72px;
   }
 
-  /* Sparkles outside the film strips */
-  .s1,
-  .s3,
-  .s5 {
-    left: 4px;
+  .curtain-text {
+    font-size: 1.25rem;
   }
-
-  .s2,
-  .s4,
-  .s6 {
-    left: 10px;
-  }
-
-  .s7,
-  .s9,
-  .s11 {
-    right: 4px;
-  }
-
-  .s8,
-  .s10,
-  .s12 {
-    right: 10px;
-  }
-
 }
