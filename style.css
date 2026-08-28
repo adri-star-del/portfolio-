@@ -26,6 +26,7 @@ html {
 }
 
 body {
+   position: relative; 
   font-family: Garamond, Georgia, "Times New Roman", serif;
   line-height: 1.5;
   color: #1a1a1a;
@@ -477,14 +478,14 @@ figcaption {
 /* ==========================================
    FILM STRIPS
    ========================================== */
-
 .film-strip {
-  position: fixed;
+  position: absolute;
 
   top: 0;
   bottom: 0;
 
   width: 96px;
+  height: 100%;
 
   overflow: hidden;
 
