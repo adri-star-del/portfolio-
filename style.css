@@ -422,9 +422,7 @@ figcaption {
 }
 
 /* Hide the finite old frame stack */
-.film-frame {
-  display: none;
-}
+
 
 @keyframes continuousFilm {
   from {
