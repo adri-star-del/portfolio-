@@ -751,7 +751,6 @@ header h1 {
 
 }
 }
-@media screen and (max-width: 700px) {
   body {
     background: hotpink !important;
   }
