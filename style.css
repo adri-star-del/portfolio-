@@ -678,80 +678,94 @@ header h1 {
   color: #ff1493 !important;
 }
 /* ==========================================
-   MOBILE — DESKTOP-STYLE SIDE DECOR
+/* ==========================================
+   MOBILE FILM STRIPS — FINAL POSITION
    ========================================== */
 
-@media (max-width: 700px) {
+@media screen and (max-width: 700px) {
 
-  /* FILM STRIPS — MOVE INWARD */
+  /* FILM STRIPS */
 
   .film-strip {
-    width: 38px;
-    z-index: 1;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+
+    width: 40px !important;
+
+    z-index: 1 !important;
   }
 
   .film-strip-left {
-    left: 38px;
-    right: auto;
+    left: 32px !important;
+    right: auto !important;
   }
 
   .film-strip-right {
-    right: 38px;
-    left: auto;
+    right: 32px !important;
+    left: auto !important;
   }
 
   .film-strip-track {
-    width: 38px;
+    width: 40px !important;
   }
 
   .film-frame {
-    width: 34px;
-    height: 72px;
+    width: 36px !important;
+    height: 72px !important;
   }
 
 
-  /* SPARKLES — STAY OUTSIDE THE FILM STRIPS */
+  /* ==========================================
+     SPARKLES — FAR OUTSIDE
+     ========================================== */
 
   .s1,
   .s3,
   .s5 {
-    left: 3px;
+    left: 2px !important;
   }
 
   .s2,
   .s4,
   .s6 {
-    left: 12px;
+    left: 8px !important;
   }
 
   .s7,
   .s9,
   .s11 {
-    right: 3px;
+    right: 2px !important;
   }
 
   .s8,
   .s10,
   .s12 {
-    right: 12px;
+    right: 8px !important;
   }
 
 
-  /* PROJECTS SIT BETWEEN THE FILM STRIPS */
+  /* ==========================================
+     PROJECTS — ABOVE DECORATIONS
+     ========================================== */
 
   .project {
-    position: relative;
-    z-index: 5;
-
-    margin-left: 0;
-    margin-right: 0;
+    position: relative !important;
+    z-index: 5 !important;
   }
 
+  .project-content {
+    position: relative !important;
+    z-index: 5 !important;
+  }
 
-  /* DECORATIONS STAY BEHIND PROJECT CONTENT */
+  .description {
+    position: relative !important;
+    z-index: 5 !important;
+  }
 
   .sparkle {
-    z-index: 2;
+    z-index: 2 !important;
   }
 
 }
