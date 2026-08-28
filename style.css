@@ -677,3 +677,80 @@ header h1 {
 .project > p {
   color: #ff1493 !important;
 }
+/* ==========================================
+   MOBILE LAYOUT
+   Keep film strips visible without covering
+   the projects or sparkles
+   ========================================== */
+
+@media (max-width: 700px) {
+
+  /* FILM STRIPS */
+
+  .film-strip {
+    width: 48px;
+  }
+
+  .film-strip-left {
+    left: 4px;
+  }
+
+  .film-strip-right {
+    right: 4px;
+  }
+
+  .film-strip-track {
+    width: 48px;
+  }
+
+  .film-frame {
+    width: 42px;
+    height: 72px;
+  }
+
+
+  /* MOVE SPARKLES FURTHER OUT */
+
+  .s1,
+  .s3,
+  .s5 {
+    left: 1px;
+  }
+
+  .s2,
+  .s4,
+  .s6 {
+    left: 18px;
+  }
+
+  .s7,
+  .s9,
+  .s11 {
+    right: 1px;
+  }
+
+  .s8,
+  .s10,
+  .s12 {
+    right: 18px;
+  }
+
+
+  /* KEEP THE ACTUAL PROJECT CONTENT CLEAR */
+
+  .project,
+  .project-content,
+  .description {
+    position: relative;
+    z-index: 5;
+  }
+
+
+  /* FILM STRIPS + SPARKLES STAY BEHIND PROJECT */
+
+  .film-strip,
+  .sparkle {
+    z-index: 1;
+  }
+
+}
