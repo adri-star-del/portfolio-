@@ -1166,3 +1166,32 @@ footer {
   }
 
 }
+/* ==========================================
+   FIX CAROUSEL BUTTONS AFTER CURTAIN OPENS
+   ========================================== */
+
+.curtain-stage.open .curtain-button {
+  pointer-events: none;
+  z-index: 0;
+}
+
+.curtain-stage.open .carousel-button,
+.curtain-stage.open .carousel-dots {
+  z-index: 50;
+  pointer-events: auto;
+}
+
+.project-carousel {
+  position: relative;
+  z-index: 2;
+}
+
+.carousel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-dots {
+  pointer-events: auto;
+}
